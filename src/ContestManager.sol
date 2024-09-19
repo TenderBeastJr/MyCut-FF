@@ -18,7 +18,6 @@ contract ContestManager is Ownable {
         onlyOwner
         returns (address)
     {
-        // Create a new Pot contract
         Pot pot = new Pot(players, rewards, token, totalRewards);
         contests.push(address(pot));
         contestToTotalRewards[address(pot)] = totalRewards;
